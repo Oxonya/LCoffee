@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "468575135756",
+    "firebase_url": "https://luwakcoffee-c5aaa.firebaseio.com",
+    "project_id": "luwakcoffee-c5aaa",
+    "storage_bucket": "luwakcoffee-c5aaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468575135756:android:61217e89ada07b7b",
+        "android_client_info": {
+          "package_name": "com.coffee.luwak.lcoffee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468575135756-0q0n7op0pjr4n1r9n186qffd6jvqqoje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coffee.luwak.lcoffee",
+            "certificate_hash": "1d20a88f6fc26bd562004dc6dba08fd47d7c1492"
+          }
+        },
+        {
+          "client_id": "468575135756-fcddtr3kkc19keliv113bdobrijmnpc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkvNc-byBRSGM--kzanRdrLgZylni2E5o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468575135756-fcddtr3kkc19keliv113bdobrijmnpc1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
