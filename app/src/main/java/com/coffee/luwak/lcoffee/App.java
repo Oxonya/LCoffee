@@ -8,6 +8,7 @@ import android.os.Handler;
 import com.coffee.luwak.lcoffee.model.Role;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreSettings;
 
 public class App extends Application {
     public static final String CUR_ROLE = "CurRole";
@@ -60,6 +61,12 @@ public class App extends Application {
 
         fbAuth = FirebaseAuth.getInstance();
         fbStore = FirebaseFirestore.getInstance();
+
+        // Включает оффлайн-доступ к данным
+        FirebaseFirestoreSettings set = new FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(true)
+                .build();
+        fbStore.setFirestoreSettings(set);
     }
 
     /**
