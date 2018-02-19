@@ -39,7 +39,6 @@
         <activity android:name=".CustomerLKActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".DrinksActivity" />
     </application>
 
 </manifest>

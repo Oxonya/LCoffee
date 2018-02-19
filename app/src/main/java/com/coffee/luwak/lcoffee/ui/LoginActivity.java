@@ -149,15 +149,15 @@ public class LoginActivity extends MasterActivity implements View.OnClickListene
             db.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    hideProgress();
                     // посмотрим всех админов
                     for (DataSnapshot ds : dataSnapshot.child("admins").getChildren()) {
                         String str = ds.getValue(String.class);
                         if (str != null && App.fbAuth.getCurrentUser() != null) {
                             if (str.equals(App.fbAuth.getCurrentUser().getEmail())) {
                                 App.setCurrentRole(Role.admin);
+                                hideProgress();
                                 LoginActivity.super.relaunch();
-                                break;
+                                return;
                             }
                         }
                     }
@@ -168,11 +168,15 @@ public class LoginActivity extends MasterActivity implements View.OnClickListene
                         if (str != null && App.fbAuth.getCurrentUser() != null) {
                             if (str.equals(App.fbAuth.getCurrentUser().getEmail())) {
                                 App.setCurrentRole(Role.barista);
+                                hideProgress();
                                 LoginActivity.super.relaunch();
-                                break;
+                                return;
                             }
                         }
                     }
+
+                    hideProgress();
+                    LoginActivity.super.relaunch();
                 }
 
                 @Override

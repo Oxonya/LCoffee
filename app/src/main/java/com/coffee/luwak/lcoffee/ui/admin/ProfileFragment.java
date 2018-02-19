@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.coffee.luwak.lcoffee.App;
 import com.coffee.luwak.lcoffee.R;
+import com.coffee.luwak.lcoffee.model.Role;
 import com.coffee.luwak.lcoffee.ui.LauncherActivity;
 import com.coffee.luwak.lcoffee.ui.MasterFragment;
 
@@ -44,6 +45,7 @@ public class ProfileFragment extends MasterFragment implements View.OnClickListe
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         App.fbAuth.signOut();
+                        App.setCurrentRole(Role.user);
                         activity.relaunch();
                     }
                 });

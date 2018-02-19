@@ -43,6 +43,8 @@ public class AdminActivity extends MainWorkingActivity {
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        openOrderFragment();
     }
 
     private void openOrderFragment() {

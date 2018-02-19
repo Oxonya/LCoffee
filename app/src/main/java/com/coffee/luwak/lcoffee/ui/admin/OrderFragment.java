@@ -22,6 +22,7 @@ public class OrderFragment extends MasterFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+
         return view;
     }
 

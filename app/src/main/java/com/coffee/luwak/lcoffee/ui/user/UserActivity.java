@@ -38,6 +38,8 @@ public class UserActivity extends MainWorkingActivity {
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        openLkFragment();
     }
 
     private void openLkFragment() {
