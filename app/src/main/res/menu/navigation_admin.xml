@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_order"
+        android:icon="@drawable/ic_add_shopping_cart_black_24dp"
+        android:title="Заказ" />
+
+    <item
+        android:id="@+id/nav_menu"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Меню" />
+
+
+    <item
+        android:id="@+id/nav_promo"
+        android:icon="@drawable/ic_local_offer_black_24dp"
+        android:title="Рекламные акции" />
+
+
+    <item
+        android:id="@+id/nav_report"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        android:title="Отчеты" />
+
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_face_black_24dp"
+        android:title="Профиль" />
+
+</menu>
