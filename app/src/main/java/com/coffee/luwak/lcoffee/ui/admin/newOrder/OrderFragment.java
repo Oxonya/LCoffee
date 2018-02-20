@@ -213,7 +213,7 @@ public class OrderFragment extends MasterFragment implements View.OnClickListene
         // Зальём документ в firebase со сгенерированным ключем
         FSUtils.getOrdersCol().document().set(currentOrder);
 
-//        initForm();
+        initForm();
         activity.toast("Заказ оформлен");
     }
 
