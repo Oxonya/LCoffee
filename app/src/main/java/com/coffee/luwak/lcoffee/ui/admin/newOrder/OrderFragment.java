@@ -97,9 +97,11 @@ public class OrderFragment extends MasterFragment implements View.OnClickListene
         btnAddToMenu = view.findViewById(R.id.btnAddToMenu);
         btnAddToMenu.setOnClickListener(this);
 
+        view.findViewById(R.id.btnClearForm).setOnClickListener(this);
+
         initForm();
 
-        receiveOrders();
+        receiveMenuItems();
 
         view.findViewById(R.id.btnOrder).setOnClickListener(this);
 
@@ -115,12 +117,19 @@ public class OrderFragment extends MasterFragment implements View.OnClickListene
             case R.id.btnOrder:
                 saveOrder();
                 break;
+            case R.id.btnClearForm:
+                initForm();
+                break;
             default:
                 break;
         }
     }
 
-    private void receiveOrders() {
+    private void receiveMenuItems() {
+        progress.setVisibility(View.VISIBLE);
+        rvMenuItems.setVisibility(View.GONE);
+        btnAddToMenu.setVisibility(View.GONE);
+
         final DocumentReference ref = FSUtils.getMenuRef();
         ref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -213,7 +222,7 @@ public class OrderFragment extends MasterFragment implements View.OnClickListene
         // Зальём документ в firebase со сгенерированным ключем
         FSUtils.getOrdersCol().document().set(currentOrder);
 
-        initForm();
+//        initForm();
         activity.toast("Заказ оформлен");
     }
 
@@ -229,5 +238,9 @@ public class OrderFragment extends MasterFragment implements View.OnClickListene
         currentOrder.dateStr = now;
 
         sb.setProgress(0);
+
+        adapter.clearItems();
+
+        receiveMenuItems();
     }
 }

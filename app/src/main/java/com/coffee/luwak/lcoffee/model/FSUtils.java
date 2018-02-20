@@ -9,6 +9,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +44,7 @@ public class FSUtils {
 
         App.fbStore.collection(Const.CUPS_COLLECTION)
                 .document(email + Const.CUPS_SUFFIX)
-                .update(cups);
+                .set(cups, SetOptions.merge());
     }
 
     /**
@@ -55,7 +56,7 @@ public class FSUtils {
                 .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                Long count = (long) cupCount;
+                Long count = 0L;
 
                 if (task.getResult().exists()) {
                     Map<String, Object> map = task.getResult().getData();
@@ -68,7 +69,7 @@ public class FSUtils {
                         }
                     }
                 }
-                count++;
+                count += cupCount;
                 setCupsToUser(email, cupType, count);
             }
         });
