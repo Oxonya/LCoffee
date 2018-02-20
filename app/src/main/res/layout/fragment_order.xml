@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context="com.coffee.luwak.lcoffee.ui.admin.OrderFragment">
+        tools:context="com.coffee.luwak.lcoffee.ui.admin.newOrder.OrderFragment">
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,15 +27,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Дата и время"/>
+            android:text="Дата и время заказа"/>
 
-        <EditText
-            android:id="@+id/etDateTime"
+        <TextView
+            android:id="@+id/tvDateTime"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:minWidth="200dp"
-            android:hint="Дата и время заказа"
-            android:inputType="datetime"
+            android:text="23.06.2018 11:00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -85,6 +83,7 @@
             <RadioButton
                 android:id="@+id/radioCard"
                 android:text="Карта"
+                android:checked="true"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content" />
@@ -96,6 +95,44 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content" />
         </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Заказанные позиции" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:tooltipText="Топ кек"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvMenuItems"
+            android:visibility="gone"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnAddToMenu"
+            android:text="Добавить товар"
+            android:visibility="gone"
+            android:layout_gravity="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <View
             android:layout_width="match_parent"
@@ -118,6 +155,15 @@
             android:layout_margin="16dp"
             android:max="100"
             android:progress="0" />
+
+        <TextView
+            android:id="@+id/tvSummary"
+            android:layout_margin="16dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="ИТОГО: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btnOrder"

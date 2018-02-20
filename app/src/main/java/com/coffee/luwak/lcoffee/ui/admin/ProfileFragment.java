@@ -31,6 +31,14 @@ public class ProfileFragment extends MasterFragment implements View.OnClickListe
 
         TextView email = view.findViewById(R.id.email);
         String txt = "Ваш e-mail:\n" + App.fbAuth.getCurrentUser().getEmail();
+
+        if (App.getCurrentRole() == Role.admin)
+            txt += "\nАдминистратор";
+        else if (App.getCurrentRole() == Role.barista)
+            txt += "\nБариста";
+        else
+            txt += "\nПользователь";
+
         email.setText(txt);
 
         return view;

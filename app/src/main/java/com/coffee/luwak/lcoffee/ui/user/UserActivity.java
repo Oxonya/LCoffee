@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.coffee.luwak.lcoffee.R;
 import com.coffee.luwak.lcoffee.ui.MainWorkingActivity;
-import com.coffee.luwak.lcoffee.ui.MasterActivity;
+import com.coffee.luwak.lcoffee.ui.user.menuUser.MenuUserFragment;
 
 public class UserActivity extends MainWorkingActivity {
 
