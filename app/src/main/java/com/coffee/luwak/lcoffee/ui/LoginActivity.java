@@ -76,6 +76,7 @@ public class LoginActivity extends MasterActivity implements View.OnClickListene
                             hideProgress();
                         }
                     }
+
                 });
     }
 

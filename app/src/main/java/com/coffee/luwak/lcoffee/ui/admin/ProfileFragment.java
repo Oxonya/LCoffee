@@ -33,11 +33,11 @@ public class ProfileFragment extends MasterFragment implements View.OnClickListe
         String txt = "Ваш e-mail:\n" + App.fbAuth.getCurrentUser().getEmail();
 
         if (App.getCurrentRole() == Role.admin)
-            txt += "\nАдминистратор";
+            txt += "\n\nВы: Администратор";
         else if (App.getCurrentRole() == Role.barista)
-            txt += "\nБариста";
+            txt += "\n\nВы: Бариста";
         else
-            txt += "\nПользователь";
+            txt += "\n\nВы: Пользователь";
 
         email.setText(txt);
 
